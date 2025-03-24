@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E31F16BA-AD83-4068-9E6F-72F78FB8A197}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ex02</RootNamespace>
+    <AssemblyName>Ex02</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ex02.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\GameManager.cs" />
+    <Compile Include="Model\enums\eGameMode.cs" />
+    <Compile Include="Model\enums\eErrorTypes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckersButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\GameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GameBoard.Designer.cs">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GameUI.cs" />
+    <Compile Include="Model\classes\Board.cs" />
+    <Compile Include="Model\classes\ComputerPlayer.cs" />
+    <Compile Include="Model\enums\eGameResults.cs" />
+    <Compile Include="Model\GameLogic.cs" />
+    <Compile Include="Model\structs\Position.cs" />
+    <Compile Include="Model\classes\Move.cs" />
+    <Compile Include="Model\classes\Piece.cs" />
+    <Compile Include="Model\enums\ePieceType.cs" />
+    <Compile Include="Model\enums\ePlayerType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Model\classes\Player.cs" />
+    <Compile Include="View\PlayerAndScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PlayerAndScore.Designer.cs">
+      <DependentUpon>PlayerAndScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerNameAndError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PlayerNameAndError.Designer.cs">
+      <DependentUpon>PlayerNameAndError.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ex02.ConsoleUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DN_HIT_2025A_Ex02\Ex02.ConsoleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GameBoard.resx">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GameSettings.resx">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PlayerAndScore.resx">
+      <DependentUpon>PlayerAndScore.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PlayerNameAndError.resx">
+      <DependentUpon>PlayerNameAndError.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackCoin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteCoin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteKing.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -72,33 +72,12 @@ namespace Ex02
 
                 m_GameUI.DisplayLastMove(m_CurrentPlayer, playerMoveInput);
 
-                //I dont know if creating a new position is a good solution
                 //if the player cant continue capturing - we switching turns
-                //Add here if last move was captureMove 
                 if (!m_GameLogic.IsFurtherCapturePossible(m_Board, m_CurrentPlayer, new Position(playerMove.FromRow, playerMove.FromCol)))
                 {
                     SwitchPlayer();
-                }
-                else
-                {
-
-                }
-                
-
-
-
-
-
-
-                
-            }
-            
-
-
-
-
-
-            
+                }                
+            }    
         }
         private void SwitchPlayer()
         {
@@ -111,7 +90,6 @@ namespace Ex02
                 m_CurrentPlayer = m_Players[0];
             }
         }
-
         public Player GetRandomPlayer()
         {
             Random random = new Random();
@@ -197,7 +175,6 @@ namespace Ex02
             Move move = BuildMoveFromInput(moveInput);
             return (move, moveInput);
         }
-        //dont know if it fits in this class - dont think so
         private void SplitMoveInput(string i_MoveInput, out char io_FromRow, out char io_FromCol, out char io_ToRow, out char io_ToCol)
         {
             io_FromRow = i_MoveInput[0];
@@ -206,5 +183,4 @@ namespace Ex02
             io_ToCol = i_MoveInput[4];
         }
     }
-
 }

@@ -41,13 +41,13 @@ Visual feedback with coin and king graphics.
 
 
 # Technologies 
-Language: C#
-Framework: .NET Framework / WinForms
-IDE: Visual Studio 2022
-Design Pattern: MVC-inspired structure
-Model: Game logic (Board, Move, Player, Piece, AI, enums).
-View: WinForms UI (GameBoard, Settings, Player forms).
-Controller: GameManager – coordinates between logic and UI.
+Language: C# 
+Framework: .NET Framework / WinForms 
+IDE: Visual Studio 2022 
+Design Pattern: MVC-inspired structure 
+Model: Game logic (Board, Move, Player, Piece, AI, enums). 
+View: WinForms UI (GameBoard, Settings, Player forms). 
+Controller: GameManager – coordinates between logic and UI. 
 
 ## How to Run 
 
